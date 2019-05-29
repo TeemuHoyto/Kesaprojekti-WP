@@ -3,6 +3,8 @@
 include '../app/vendor/autoload.php';
 $foo = new App\Foo();
 
+
+
 ?><!DOCTYPE html>
 <html>
     <head>
