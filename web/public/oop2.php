@@ -37,9 +37,9 @@ $Keksitehtaan_lakko -> set_title("Keksitehtaan Lakko");
 $Keksitehtaan_lakko -> set_start_date(new \DateTime("2019-12-15T06:00:00Z"));
 $Keksitehtaan_lakko -> set_start_date_comment("alkaen Ulosmarssilla johtuen huonoista työoloista ja keksien laadun romahtamisesta");
 $Keksitehtaan_lakko -> set_end_date(new \DateTime("2019-12-24T06:00:00Z"));
-$Keksitehtaan_lakko -> set_end_date_comment("Loppuen Joululoman alkaessa ei voi lakkoilla");
+$Keksitehtaan_lakko -> set_end_date_comment("Joululoman alkaessa ei voi lakkoilla");
 
-
+$finnish_format = 'j.n.Y H:i';
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -78,8 +78,7 @@ $Keksitehtaan_lakko -> set_end_date_comment("Loppuen Joululoman alkaessa ei voi 
           foreach($lista as $value) {?>
             <li class="li"> <?php 
 
-           echo "<b style='font-size:3em;'> ".$value->title."</b><br><br> Start Date: ".$value->start_date->format('d-m-Y H:i:s')."<br> Why Start: ".$value ->start_date_comment."<br> End Date: ".$value ->end_date->format('d-m-Y H:i:s')."<br> Why End: ".$value ->end_date_comment."<br><br><br><br><br>";
-            
+echo "<b style='font-size:3em;'> ".$value->title."</b><br><br> Start Date: ".$value->get_start_date( $finnish_format )."<br> Why Start: ".$value ->start_date_comment."<br> End Date: ".$value ->get_end_date( $finnish_format )."<br> Why End: ".$value ->end_date_comment."<br><br><br><br><br>";            
             ?></li><?php  }; ?>
         </ul>
     </body>

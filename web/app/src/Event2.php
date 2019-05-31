@@ -32,15 +32,15 @@ class Event2 implements EventInterface {
     public  function get_title(){
         return $this->title;
     }
-    public  function get_start_date( ?string $format ){
-        return $this->start_date;
+    public function get_start_date( ?string $format ) {
+        return $this->start_date->format( $format );
         
     }
     public  function start_date_comment(){
         return $this->start_date_comment;
     }
     public  function get_end_date( ?string $format ){
-        return $this ->end_date;
+        return $this->end_date->format( $format );
     }
     public  function end_date_comment(){
         return $this->end_date_comment;
